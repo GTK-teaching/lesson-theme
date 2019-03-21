@@ -15,5 +15,5 @@
 [jupyter]: https://jupyter.org/
 [kramdown]: https://kramdown.gettalong.org/
 [pandoc]: https://pandoc.org/
-[workshop-repo]: {{ site.workshop_repo }}
+[workshop-repo]: {{ site.repository}}
 [yaml]: http://yaml.org/
