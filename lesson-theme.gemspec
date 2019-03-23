@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.authors                 = ["Greg Tucker-Kellogg"]
 
   spec.summary                 = %q{Theme for lessons}
-  spec.homepage                = "https://github.com/GTK-teaching/lesson.theme"
+  spec.homepage                = "https://github.com/GTK-teaching/lesson-theme"
   spec.license                 = "MIT"
 
   spec.metadata["plugin_type"] = "theme"

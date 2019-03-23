@@ -1,0 +1,50 @@
+
+
+/* Colors */
+$base-color: #003D7C !default; // NUS-blue
+$text-color: #181c22 !default;
+$accent-color: #EF7C00 !default; // NUS orange
+$background-color: #ffffff !default;
+$code-background-color: tint($base-color, 95%) !default;
+$border-color: tint($base-color, 80%) !default;
+$overlay-color: $base-color !default;
+
+/* Syntax highlighting (base16) colors */
+$base00: #1c2023 !default;
+$base01: #393f45 !default;
+$base02: #565e65 !default;
+$base03: #747c84 !default;
+$base04: #adb3ba !default;
+$base05: #c7ccd1 !default;
+$base06: #dfe2e5 !default;
+$base07: #f3f4f5 !default;
+$base08: #c7ae95 !default;
+$base09: #c7c795 !default;
+$base0a: #aec795 !default;
+$base0b: #95c7ae !default;
+$base0c: #95aec7 !default;
+$base0d: #ae95c7 !default;
+$base0e: #c795ae !default;
+$base0f: #c79595 !default;
+
+
+// code boxes
+$color-error:       #bd2c00 !default;
+$color-output:      #303030 !default;
+$color-source:      #6e5494 !default;
+
+// blockquotes
+$color-warning:     lighten($color-error,40%);
+$color-callout:     lighten($accent-color,20%) !default;
+$color-challenge:   #32cd32 !default;
+$color-checklist:   #dfd2a0 !default;
+$color-discussion:  #eec275 !default;
+$color-idea:        #ffff00; // $nus-orange !default; 
+$color-question:        #eeeeee; // $nus-orange !default; 
+
+$color-keypoints:   $accent-color !default;
+$color-overview:  lighten(desaturate($base-color,50%),50%); 
+$color-prereq:      $border-color !default;
+$color-solution:    #ded4b9 !default;
+$color-testimonial: #fc8dc1 !default;
+

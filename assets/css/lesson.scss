@@ -1,11 +1,14 @@
 ---
 ---
 
-@import "colors";
+@import "functions/colors";
 
-//----------------------------------------
-// Specialized code blocks.
-//----------------------------------------
+ @import "mixins/interpolate";
+
+@import "skins/{{ site.data.theme.skin | default: 'default' }}";
+
+@import "variables";
+@import "base";
 
 @mixin cdSetup($color) {
     color: $color;
@@ -15,8 +18,8 @@
 }
 
 .warning  { @include cdSetup(darken($color-error,10%)); }
-.idea  { @include cdSetup($nus-blue,); }
-.question  { @include cdSetup($nus-blue,); }
+.idea  { @include cdSetup($base-color,); }
+.question  { @include cdSetup($base-color,); }
 .error  { @include cdSetup($color-error); }
 .output { @include cdSetup($color-output); }
 .source { @include cdSetup($color-source); }
@@ -102,10 +105,10 @@ h3 {
 .idea, blockquote .idea{ @include bkSetup($color-idea, "\f0eb",$weight: 900); }
 
 .question, blockquote .question{ @include bkSetup($color-question, "\f059",$weight: 900); }
-.system, blockquote .system { @include bkSetup($color-system, "\f108"); }
-.linux, blockquote .linux { @include bkSetup($color-system, "\f17c"); }
-.osx, blockquote .osx { @include bkSetup($color-system, "\f179"); }
-.windows, blockquote .windows { @include bkSetup($color-system, "\f17a",$weight: 500); }
+.system, blockquote .system { @include bkSetup($accent-color, "\f108"); }
+.linux, blockquote .linux { @include bkSetup($accent-color, "\f17c"); }
+.osx, blockquote .osx { @include bkSetup($accent-color, "\f179"); }
+.windows, blockquote .windows { @include bkSetup($accent-color, "\f17a",$weight: 500); }
 .callout{ @include bkSetup($color-callout, "\f08d"); }
 .challenge{ @include bkSetup($color-challenge, "\f44b"); }
 //.checklist{ @include bkSetup($color-checklist, "\f14a"); }
@@ -165,15 +168,24 @@ article h3 { margin: 40px 0 16px; }
 // Miscellaneous.
 //----------------------------------------
 
+a {
+    color: $base-color;
+    &:hover,  &:focus {
+        color: $accent-color; }}
+
 .figures h2 { margin-top: 100px; }
 
 .title, .maintitle {
     text-align: center;
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 700;
-    color: $nus-blue;
+    color: $base-color;
 
-}
+      > a {
+        color: $base-color;
+        &:hover,  &:focus {
+            color: $accent-color; }}}
+
 
 .footertext {
   text-align: center;
@@ -190,46 +202,41 @@ footer .help-links
 }
 
 
-$bgDefault   : $nus-blue;
-$bgHighlight : $nus-blue;
-$colDefault  : #FFFFFF;
-$colHighlight: $nus-orange;
-
-.container-fluid, navbar-default, .navbar, .navbar-collapse, .navbar-brand {
-  background-color: $bgDefault;
+.container-fluid, .navbar-default, .navbar, .navbar-collapse, .navbar-brand {
+  background-color: $base-color;
   border-color: #FFFFFF;
   .navbar-brand {
-    color: $colDefault;
+    color: invert($text-color);
     &:hover, &:focus {
-      color: $colHighlight; }}
-  .navbar-text {
-    color: $colDefault; }
+        color: $background-color; }} 
+ .navbar-text {
+    color: $base-color; }
   .navbar-nav {
     > li {
-      > a {
-        color: $colDefault;
-        &:hover,  &:focus {
-          color: $colHighlight; }}}
+        > a {
+            color: invert($text-color);
+            &:hover, &:focus {
+                color: $background-color; }}}
     > .active {
       > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}
+        color: $accent-color;
+        background-color: $base-color; }}
     > .open {
       > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
+        color: $accent-color;
+        background-color: $base-color; }}}
   .navbar-toggle {
-    border-color: $bgHighlight;
+    border-color: $base-color;
     &:hover, &:focus {
-      background-color: $bgHighlight; }
+      background-color: $base-color; }
     .icon-bar {
-      background-color: $colDefault; }}
+      background-color: $base-color; }}
   .navbar-form {
-    border-color: $colDefault; }
+    border-color: $base-color; }
   .navbar-link {
-    color: $colDefault;
+    color: $base-color;
     &:hover {
-      color: $colHighlight; }}}
+      color: $accent-color; }}}
 
 
 img.navbar-logo {
@@ -239,7 +246,7 @@ img.navbar-logo {
 }
 
 div.branding {
-  color: nus-blue;
+    color: $base-color;
 }
 
 ul,

@@ -21,6 +21,8 @@ kind: "lesson"
 # Please don't change it: <USERNAME>/<PROJECT> is correct.
 repository: <USERNAME>/<PROJECT>
 
+workshop_repo: site.repository
+
 # Email address, no mailto:
 email: "dbsgtk@nus.edu.sg"
 

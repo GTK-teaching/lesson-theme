@@ -12,6 +12,6 @@ FIXME: home page introduction
 > ## Prerequisites
 >
 > FIXME
-{: .prereq}
+{: .keypoints}
 
 {% include links.md %}
