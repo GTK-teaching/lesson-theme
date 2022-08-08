@@ -3,7 +3,7 @@
 
 @import "functions/colors";
 
- @import "mixins/interpolate";
+@import "mixins/interpolate";
 
 @import "skins/{{ site.data.theme.skin | default: 'default' }}";
 
@@ -46,7 +46,7 @@
 .language-r pre,
 .sql pre ,
 .language-sql pre {
-  border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
 }
 
 //----------------------------------------
@@ -57,47 +57,47 @@ $codeblock-padding: 6px !default;
 
 @mixin bkSetup($color, $glyph, $weight: 900) {
 
-  $gradientcolor1: $color;
-  $gradientcolor2: scale-color($color, $lightness: 100%);
+    $gradientcolor1: $color;
+    $gradientcolor2: scale-color($color, $lightness: 100%);
 
-  padding-left: $codeblock-padding;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 0;
-  border: 1px solid;
-  border-color: darken($color,30%);
-  border-radius: p0x;
-  padding-bottom: $codeblock-padding;
-
-  margin: 15px 0;
-
-  h2 {
-    padding-top: $codeblock-padding;
-    padding-bottom: $codeblock-padding;
-    font-family: "Roboto", sans-serif;
-    font-size: 20px;
-    border: 0px solid;
-    background: linear-gradient(to bottom, $gradientcolor1, $gradientcolor2);
-    border-color: $color;
-    margin-top: 0px;
-    margin-left: -$codeblock-padding; // to move back to the left margin of the enclosing blockquote
-  }
-  h2:before {
-    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
-    content: $glyph;
-    float: left;
-    font-weight: $weight;
     padding-left: $codeblock-padding;
-    padding-right: $codeblock-padding;
-    display: inline-block;
-    //    -webkit-font-smoothing: antialiased;
-  }
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    border: 1px solid;
+    border-color: darken($color,30%);
+    border-radius: p0x;
+    padding-bottom: $codeblock-padding;
+
+    margin: 15px 0;
+
+    h2 {
+	padding-top: $codeblock-padding;
+	padding-bottom: $codeblock-padding;
+	font-family: "Roboto", sans-serif;
+	font-size: 2.0em;
+	border: 0px solid;
+	background: linear-gradient(to bottom, $gradientcolor1, $gradientcolor2);
+	border-color: $color;
+	margin-top: 0px;
+	margin-left: -$codeblock-padding; // to move back to the left margin of the enclosing blockquote
+    }
+    h2:before {
+	font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands";
+	content: $glyph;
+	float: left;
+	font-weight: $weight;
+	padding-left: $codeblock-padding;
+	padding-right: $codeblock-padding;
+	display: inline-block;
+	//    -webkit-font-smoothing: antialiased;
+    }
 
 }
 
 h3 {
     font-family: "Roboto", sans-serif;
-    font-size: 18px;
+    font-size: 1.6em;
 
 } 
 
@@ -131,7 +131,7 @@ h3 {
 .prereq h3,
 .solution h3,
 .testimonial h3 {
-font-size: 18px;
+    font-size: 18px;
 }
 
 blockquote p {
@@ -143,10 +143,10 @@ blockquote p {
 //----------------------------------------
 
 code {
-  white-space: nowrap;
-  padding: 2px 5px;
-  color: #3d90d9;
-  background-color: #e7e7e7;
+    white-space: nowrap;
+    padding: 2px 5px;
+    color: #3d90d9;
+    background-color: #e7e7e7;
 }
 
 article img {
@@ -156,10 +156,10 @@ article img {
 }
 
 article h2 {
-  margin: 48px 0 16px;
-  border-bottom: solid 1px #eaecef;
-  padding-bottom: 0.3em;
-  line-height: 1.25;
+    margin: 48px 0 16px;
+    border-bottom: solid 1px #eaecef;
+    padding-bottom: 0.3em;
+    line-height: 1.25;
 }
 
 article h3 { margin: 40px 0 16px; }
@@ -181,14 +181,14 @@ a {
     font-weight: 700;
     color: $base-color;
 
-      > a {
+    > a {
         color: $base-color;
         &:hover,  &:focus {
             color: $accent-color; }}}
 
 
 .footertext {
-  text-align: center;
+    text-align: center;
 }
 
 footer .copyright,
@@ -203,46 +203,47 @@ footer .help-links
 
 
 .container-fluid, .navbar-default, .navbar, .navbar-collapse, .navbar-brand {
-  background-color: $base-color;
-  border-color: #FFFFFF;
-  .navbar-brand {
-    color: invert($text-color);
-    &:hover, &:focus {
-        color: $background-color; }} 
- .navbar-text {
-    color: $base-color; }
-  .navbar-nav {
-    > li {
-        > a {
-            color: invert($text-color);
-            &:hover, &:focus {
-                color: $background-color; }}}
-    > .active {
-      > a, > a:hover, > a:focus {
-        color: $accent-color;
-        background-color: $base-color; }}
-    > .open {
-      > a, > a:hover, > a:focus {
-        color: $accent-color;
-        background-color: $base-color; }}}
-  .navbar-toggle {
-    border-color: $base-color;
-    &:hover, &:focus {
-      background-color: $base-color; }
-    .icon-bar {
-      background-color: $base-color; }}
-  .navbar-form {
-    border-color: $base-color; }
-  .navbar-link {
-    color: $base-color;
-    &:hover {
-      color: $accent-color; }}}
+    font-size: 1em;
+    background-color: $base-color;
+    border-color: #FFFFFF;
+    .navbar-brand {
+	color: invert($text-color);
+	&:hover, &:focus {
+            color: $background-color; }} 
+    .navbar-text {
+	color: $base-color; }
+    .navbar-nav {
+	> li {
+            > a {
+		color: invert($text-color);
+		&:hover, &:focus {
+                    color: $background-color; }}}
+	> .active {
+	    > a, > a:hover, > a:focus {
+		color: $accent-color;
+		background-color: $base-color; }}
+	> .open {
+	    > a, > a:hover, > a:focus {
+		color: $accent-color;
+		background-color: $base-color; }}}
+    .navbar-toggle {
+	border-color: $base-color;
+	&:hover, &:focus {
+	    background-color: $base-color; }
+	.icon-bar {
+	    background-color: $base-color; }}
+    .navbar-form {
+	border-color: $base-color; }
+    .navbar-link {
+	color: $base-color;
+	&:hover {
+	    color: $accent-color; }}}
 
 
 img.navbar-logo {
-  height: 40px; // synchronize with height of navbar
-  padding-top: 5px;
-  padding-right: 10px;
+    height: 40px; // synchronize with height of navbar
+    padding-top: 5px;
+    padding-right: 10px;
 }
 
 div.branding {
@@ -251,12 +252,12 @@ div.branding {
 
 ul,
 ol {
-  padding-left: 2em;
+    padding-left: 2em;
 }
 
 span.fold-unfold {
-  margin-left: 1em;
-  opacity: 0.5;
+    margin-left: 1em;
+    opacity: 0.5;
 }
 
 
@@ -315,10 +316,10 @@ kbd {
 
 
 .monospace {
-  font-family: Lucida Console, Courier, monospace;
+    font-family: Lucida Console, Courier, monospace;
 }
 
 body {
-    font-size: 12pt;
+    font-size: 16pt;
     font-family: "Roboto", sans-serif;
 }
