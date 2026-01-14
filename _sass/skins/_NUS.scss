@@ -1,3 +1,4 @@
+@use "sass:color";
 
 
 /* Colors */
@@ -34,8 +35,8 @@ $color-output:      #303030 !default;
 $color-source:      #6e5494 !default;
 
 // blockquotes
-$color-warning:     lighten($color-error,40%);
-$color-callout:     lighten($accent-color,20%) !default;
+$color-warning:     color.adjust($color-error,$lightness: 40%);
+$color-callout:     color.adjust($accent-color,$lightness: 20%) !default;
 $color-challenge:   #32cd32 !default;
 $color-checklist:   #dfd2a0 !default;
 $color-discussion:  #eec275 !default;
@@ -43,7 +44,7 @@ $color-idea:        #ffff00; // $nus-orange !default;
 $color-question:        #eeeeee; // $nus-orange !default; 
 
 $color-keypoints:   $accent-color !default;
-$color-overview:  lighten(desaturate($base-color,50%),50%); 
+$color-overview:  color.adjust(color.adjust($base-color,$saturation: -50%),$lightness: 50%); 
 $color-prereq:      $border-color !default;
 $color-solution:    #ded4b9 !default;
 $color-testimonial: #fc8dc1 !default;

@@ -1,3 +1,4 @@
+@use "sass:math";
 // https://www.madebymike.com.au/writing/fluid-type-calc-examples/
 // I'm now recommending this technique:
 
@@ -24,13 +25,13 @@
 // Requires the calc-interpolation function which can also be used independently
 
 @function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
-	$a: ($max-value - $min-value) / ($max-screen - $min-screen);
+	$a: calc(($max-value - $min-value) / ($max-screen - $min-screen));
 	$b: $min-value - $a * $min-screen; 
 
 	$sign: "+";
 	@if ($b < 0) {
 		$sign: "-";
-		$b: abs($b);
+		$b: math.abs($b);
 	}
 	@return calc(#{$a*100}vw #{$sign} #{$b});
 }

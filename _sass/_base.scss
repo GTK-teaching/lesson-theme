@@ -2,6 +2,8 @@
    Base elements
    ========================================================================== */
 
+@use "functions/colors" as *;
+
 html {
   @include interpolate(font-size,$min-vw, $max-vw, $min-font-size, $max-font-size);
 }

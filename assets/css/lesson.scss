@@ -1,14 +1,15 @@
+@use "sass:color";
 ---
 ---
 
-@import "functions/colors";
+@use "functions/colors" as *;
 
-@import "mixins/interpolate";
+@use "mixins/interpolate" as *;
 
-@import "skins/{{ site.data.theme.skin | default: 'default' }}";
+@use "skins/{{ site.data.theme.skin | default: 'default' }}" as *;
 
-@import "variables";
-@import "base";
+@use "variables" as *;
+@use "base" as *;
 
 @mixin cdSetup($color) {
     color: $color;
@@ -17,7 +18,7 @@
     border-radius: 4px 0 0 4px;
 }
 
-.warning  { @include cdSetup(darken($color-error,10%)); }
+.warning  { @include cdSetup(color.adjust($color-error,$lightness: -10%)); }
 .idea  { @include cdSetup($base-color,); }
 .question  { @include cdSetup($base-color,); }
 .error  { @include cdSetup($color-error); }
@@ -58,14 +59,14 @@ $codeblock-padding: 6px !default;
 @mixin bkSetup($color, $glyph, $weight: 900) {
 
     $gradientcolor1: $color;
-    $gradientcolor2: scale-color($color, $lightness: 100%);
+    $gradientcolor2: color.scale($color, $lightness: 100%);
 
     padding-left: $codeblock-padding;
     padding-top: 0;
     padding-bottom: 0;
     padding-right: 0;
     border: 1px solid;
-    border-color: darken($color,30%);
+    border-color: color.adjust($color,$lightness: -30%);
     border-radius: p0x;
     padding-bottom: $codeblock-padding;
 
@@ -207,7 +208,7 @@ footer .help-links
     background-color: $base-color;
     border-color: #FFFFFF;
     .navbar-brand {
-	color: invert($text-color);
+	color: color.invert($text-color);
 	&:hover, &:focus {
             color: $background-color; }} 
     .navbar-text {
@@ -215,7 +216,7 @@ footer .help-links
     .navbar-nav {
 	> li {
             > a {
-		color: invert($text-color);
+		color: color.invert($text-color);
 		&:hover, &:focus {
                     color: $background-color; }}}
 	> .active {
