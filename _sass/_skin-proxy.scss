@@ -1,0 +1,3 @@
+// This file is a proxy that forwards the default skin
+// lesson.scss will override this with the actual chosen skin
+@forward "skins/default";
