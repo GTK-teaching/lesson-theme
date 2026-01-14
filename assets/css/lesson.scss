@@ -197,8 +197,7 @@ footer .help-links
     line-height: 1.1;
 }
 
-
-.navbar-default {
+.container-fluid, .navbar-default, .navbar, .navbar-collapse, .navbar-brand {
     font-size: 1em;
     background-color: $base-color;
     border-color: #FFFFFF;
