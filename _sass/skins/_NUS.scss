@@ -1,5 +1,6 @@
 @use "sass:color";
-
+@use "functions/colors" as *;
+@forward "functions/colors";
 
 /* Colors */
 $base-color: #003D7C !default; // NUS-blue

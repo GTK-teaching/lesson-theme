@@ -1,4 +1,7 @@
 @use "sass:color";
+@use "functions/colors" as *;
+@forward "functions/colors";
+
 // $base-color: #393e46 !default;
 // $text-color: #181c22 !default;
 // $accent-color: lighten($base-color,90%) !default;

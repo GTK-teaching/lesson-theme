@@ -1,14 +1,10 @@
 ---
 ---
 @use "sass:color";
-
-@use "functions/colors" as *;
 @use "mixins/interpolate" as *;
+@use "skins/{{ site.data.theme.skin | default: 'default' }}" as *;
 @use "variables" as *;
 @use "base" as *;
-
-// Use @import for dynamic skin selection (Liquid templating incompatible with @use)
-@import "skins/{{ site.data.theme.skin | default: 'default' }}";
 
 @mixin cdSetup($color) {
     color: $color;
